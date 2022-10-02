@@ -1,0 +1,4 @@
+.direnv/
+my-app
+*.iso
+*.qcow2
