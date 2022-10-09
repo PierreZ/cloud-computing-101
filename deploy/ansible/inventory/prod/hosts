@@ -1,0 +1,2 @@
+[all]
+my-vm ansible_host=135.125.89.231 ansible_user=debian ansible_become_user=root

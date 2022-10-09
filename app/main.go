@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -20,9 +21,22 @@ func sayHello(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
+	port := os.Getenv("MY_APP_LISTEN_PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	parsedPort, err := strconv.Atoi(port)
+	if err != nil {
+		panic(err)
+	}
+
+	listenArg := fmt.Sprintf(":%d", parsedPort)
+
 	http.HandleFunc("/", sayHello)
-	fmt.Println("starting server on :8080")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	fmt.Println("starting server on " + listenArg)
+	if err := http.ListenAndServe(listenArg, nil); err != nil {
 		panic(err)
 	}
 }

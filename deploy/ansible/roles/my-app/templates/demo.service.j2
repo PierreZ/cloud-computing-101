@@ -1,0 +1,16 @@
+# /etc/systemd/system/demo.service
+[Unit]
+Description=demo
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/bin/demo-cloud-yncrea
+
+Environment=MY_APP_LISTEN_PORT=80
+
+[Install]
+WantedBy=multi-user.target
