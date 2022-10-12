@@ -15,7 +15,14 @@ func sayHello(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("oups")
 		os.Exit(1)
 	}
-	message = "Hello " + message
+
+	hostname, err := os.Hostname()
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	message = "Hello '" + message + "' from " + hostname
 
 	w.Write([]byte(message))
 }
