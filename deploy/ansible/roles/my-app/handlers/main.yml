@@ -1,0 +1,5 @@
+- name: MyApp | Reload systemd services
+  ansible.builtin.systemd:
+    name: demo.service
+    state: restarted
+    enabled: true

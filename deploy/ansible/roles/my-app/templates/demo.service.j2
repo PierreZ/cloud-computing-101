@@ -8,9 +8,9 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-ExecStart=/bin/demo-cloud-yncrea
+ExecStart=/usr/local/bin/my-app
 
-Environment=MY_APP_LISTEN_PORT=80
+Environment=MY_APP_LISTEN_PORT={{ my_app_listening_port }}
 
 [Install]
 WantedBy=multi-user.target

@@ -1,2 +1,19 @@
-...
 ---
+- name: Download Binary
+  ansible.builtin.get_url:
+    url: 'https://github.com/PierreZ/cloud-computing-101/releases/download/latest/my-app'
+    dest: /usr/local/bin/my-app
+    mode: '0740'
+  notify:
+    - MyApp | Reload systemd services
+
+- name:  Copy systemd service
+  ansible.builtin.template:
+    src: "demo.service.j2"
+    dest: "/etc/systemd/system/demo.service"
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - MyApp | Reload systemd services
+...
