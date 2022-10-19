@@ -10,7 +10,8 @@ Restart=always
 RestartSec=1
 ExecStart=/usr/local/bin/my-app
 
-Environment=MY_APP_LISTEN_PORT={{ my_app_listening_port }}
+
+# Environment=MY_APP_LISTEN_PORT={{ my_app_listening_port }}
 
 [Install]
 WantedBy=multi-user.target

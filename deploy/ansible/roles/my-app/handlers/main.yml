@@ -3,3 +3,4 @@
     name: demo.service
     state: restarted
     enabled: true
+    daemon_reload: true
