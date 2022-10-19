@@ -9,7 +9,7 @@ qemu-img create -f qcow2 ubuntu.qcow2 16G
 # Then start a vm
 qemu-system-x86_64 \
     -enable-kvm \
-    -m 16384 \
+    -m 8000 \
     -smp cpus=4 \
     -nic user,model=virtio \
     -drive file=ubuntu.qcow2,media=disk,if=virtio \
