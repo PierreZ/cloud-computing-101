@@ -1,2 +1,2 @@
 [all]
-my-api-1 ansible_host=141.94.174.11  ansible_user=debian ansible_become_user=root ansible_become=true
+my-api-1 ansible_host=152.228.212.188  ansible_user=debian ansible_become_user=root ansible_become=true

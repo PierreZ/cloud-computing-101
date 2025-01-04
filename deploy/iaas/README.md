@@ -1,4 +1,4 @@
-# Deploy my-app
+# Deploy my-app by hand
 
 ```shell
 curl -L --output /bin/my-app https://github.com/PierreZ/cloud-computing-101/releases/download/latest/my-app
